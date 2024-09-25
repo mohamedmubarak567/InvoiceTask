@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KUHr.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6393d3ca01e87a448d37a3d63e36786a1a06b878")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6250805da1254fb114277fac42be18084e61cfa0")]
 [assembly: System.Reflection.AssemblyProductAttribute("KUHr.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KUHr.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

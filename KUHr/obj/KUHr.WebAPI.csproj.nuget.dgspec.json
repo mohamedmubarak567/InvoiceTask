@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj": {}
+    "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj": {}
   },
   "projects": {
-    "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj": {
+    "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj",
         "projectName": "KUHr.DataAccess",
-        "projectPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj",
+        "projectPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj",
         "packagesPath": "C:\\Users\\mubarak\\.nuget\\packages\\",
-        "outputPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj": {
-                "projectPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj"
+              "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj": {
+                "projectPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj"
               }
             }
           }
@@ -86,14 +86,14 @@
         }
       }
     },
-    "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj": {
+    "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj",
+        "projectUniqueName": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj",
         "projectName": "KUHr.Data",
-        "projectPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj",
+        "projectPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Data\\KUHr.Data.csproj",
         "packagesPath": "C:\\Users\\mubarak\\.nuget\\packages\\",
-        "outputPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Data\\obj\\",
+        "outputPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -180,14 +180,14 @@
         }
       }
     },
-    "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj": {
+    "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj",
+        "projectUniqueName": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj",
         "projectName": "KUHr.Service",
-        "projectPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj",
+        "projectPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj",
         "packagesPath": "C:\\Users\\mubarak\\.nuget\\packages\\",
-        "outputPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Service\\obj\\",
+        "outputPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -209,8 +209,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj": {
-                "projectPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj"
+              "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.DataAccess\\KUHr.DataAccess.csproj"
               }
             }
           }
@@ -278,14 +278,14 @@
         }
       }
     },
-    "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj": {
+    "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj",
         "projectName": "KUHr.WebAPI",
-        "projectPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj",
+        "projectPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj",
         "packagesPath": "C:\\Users\\mubarak\\.nuget\\packages\\",
-        "outputPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr\\obj\\",
+        "outputPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -307,8 +307,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj": {
-                "projectPath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj"
+              "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj": {
+                "projectPath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr.Service\\KUHr.Service.csproj"
               }
             }
           }

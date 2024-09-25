@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "591kuZpOHuQJTIj3uNRkX+35CAOwkJ1FLehXGGomQfPKs3kUu8vPxaF7AeB/PBc8HapRB9V3LMzN0W7Q2+3Xng==",
+  "dgSpecHash": "ggsKSWo9sz5pMfA984fFN/XNSGMZH2UI1qxs2bRUlH0wgZqkJzvy6Vj3hvI+wosvD4uU5Dlqr55nvEkkaS6xyQ==",
   "success": true,
-  "projectFilePath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\mubarak\\OneDrive\\Desktop\\New folder (6)\\InvoiceTask\\KUHr\\KUHr.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mubarak\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\mubarak\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
