@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "99FNpPxqB6z1dIWT+jYckYZB8p0F2wrJ9n1kDZHR4LS+GZQZB8DzgPm7WgCKINJgI1bLUuXUZEyhiCfP7UNEdQ==",
+  "success": true,
+  "projectFilePath": "E:\\KUHR_BackEnd\\TaskInvoice\\InvoiceTask\\Invoice.Pages\\Invoice.Pages.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mubarak\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

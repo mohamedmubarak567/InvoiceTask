@@ -1,0 +1,15 @@
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\bin\Debug\net5.0\KUHr.Data.deps.json
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\bin\Debug\net5.0\KUHr.Data.runtimeconfig.json
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\bin\Debug\net5.0\KUHr.Data.runtimeconfig.dev.json
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\bin\Debug\net5.0\KUHr.Data.dll
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\bin\Debug\net5.0\KUHr.Data.pdb
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\KUHr.Data.csproj.AssemblyReference.cache
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\KUHr.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\KUHr.Data.AssemblyInfoInputs.cache
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\KUHr.Data.AssemblyInfo.cs
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\KUHr.Data.csproj.CoreCompileInputs.cache
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\KUHr.Data.dll
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\refint\KUHr.Data.dll
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\KUHr.Data.pdb
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\KUHr.Data.genruntimeconfig.cache
+E:\KUHR_BackEnd\Invoice\KUHR-Backend\KUHr.Data\obj\Debug\net5.0\ref\KUHr.Data.dll

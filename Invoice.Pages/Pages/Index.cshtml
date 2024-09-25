@@ -1,0 +1,379 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Invoices";
+}
+
+<h2>Invoices</h2>
+
+<!-- Display any model state errors -->
+@if (ModelState.ErrorCount > 0)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}
+
+<!-- Button to trigger Create Invoice modal -->
+<button class="btn btn-success mb-2" data-toggle="modal" data-target="#createModal">Create New Invoice</button>
+
+<!-- Table displaying invoices -->
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Invoice Number</th>
+            <th>Customer Name</th>
+            <th>Total Amount</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var invoice in Model.Invoices)
+        {
+            <tr>
+                <td>@invoice.InvoiceNumber</td>
+                <td>@invoice.CustomerName</td>
+                <td>@invoice.TotalAmount</td>
+                <td>@invoice.InvoiceItemCount</td>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"
+                            onclick="fillModal('@invoice.Id', '@invoice.InvoiceNumber', '@invoice.CustomerName', '@invoice.TotalAmount', '@invoice.Notes','@invoice.InvoiceItemCount')">
+                        Edit
+                    </button>
+                    <button class="btn btn-danger" onclick="deleteInvoice('@invoice.Id')">Delete</button>
+                    <!-- Button to trigger Create Invoice Item modal -->
+                    <button class="btn btn-info mb-2" onclick="retrieveAllInvoiceItems('@invoice.Id')">Invoice Item</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal for editing invoice -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Update">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Invoice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="EditInvoiceId" name="invoiceDto.Id" />
+                    <div class="form-group">
+                        <label for="EditInvoiceNumber">Invoice Number</label>
+                        <input type="text" id="EditInvoiceNumber" name="invoiceDto.InvoiceNumber" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="EditCustomerName">Customer Name</label>
+                        <input type="text" id="EditCustomerName" name="invoiceDto.CustomerName" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="EditTotalAmount">Total Amount</label>
+                        <input type="number" id="EditTotalAmount" name="invoiceDto.TotalAmount" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="EditNotes">Notes</label>
+                        <textarea id="EditNotes" name="invoiceDto.Notes" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update Invoice</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Create Invoice Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Create">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createModalLabel">Create New Invoice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="CreateInvoiceNumber">Invoice Number</label>
+                        <input type="text" id="CreateInvoiceNumber" name="invoiceDto.InvoiceNumber" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="CreateCustomerName">Customer Name</label>
+                        <input type="text" id="CreateCustomerName" name="invoiceDto.CustomerName" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="CreateTotalAmount">Total Amount</label>
+                        <input type="number" id="CreateTotalAmount" name="invoiceDto.TotalAmount" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="CreateNotes">Notes</label>
+                        <textarea id="CreateNotes" name="invoiceDto.Notes" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Create Invoice</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Create Invoice Item Modal -->
+@* <div class="modal fade" id="createInvoiceItemModal" tabindex="-1" role="dialog" aria-labelledby="createInvoiceItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="createInvoiceItemForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createInvoiceItemModalLabel">Add Invoice Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="HiddenInvoiceId" name="invoiceId" />
+                    <div class="form-group">
+                        <label for="Description">Description</label>
+                        <input type="text" id="Description" name="description" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="Quantity">Quantity</label>
+                        <input type="number" id="Quantity" name="quantity" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="UnitPrice">Unit Price</label>
+                        <input type="number" step="0.01" id="UnitPrice" name="unitPrice" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="TotalPrice">Total Price</label>
+                        <input type="number" step="0.01" id="TotalPrice" name="totalPrice" class="form-control" required readonly />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add Invoice Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> *@
+
+<script>
+    // Function to retrieve and display all invoice items inside the modal
+    async function retrieveAllInvoiceItems(invoiceId) {
+        document.getElementById('HiddenInvoiceId').value = invoiceId;
+
+        // Fetch the existing invoice items
+        const response = await fetch(`/Index?handler=InvoiceItems&invoiceId=${invoiceId}`);
+        const items = await response.json();
+
+        // Generate table HTML
+        let html = `<table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+
+        // Loop through items and append rows to the table
+        items.forEach(item => {
+            html += `<tr>
+                            <td>${item.description}</td>
+                            <td>${item.quantity}</td>
+                            <td>${item.unitPrice}</td>
+                            <td>${item.totalPrice}</td>
+                        </tr>`;
+        });
+        html += `</tbody></table>`;
+
+        // Display the items in the modal
+        document.getElementById('invoiceItemsContainer').innerHTML = html;
+
+        // Show the modal
+        $('#createInvoiceItemModal').modal('show');
+    }
+
+    // Add event listener for the create invoice item form submission
+    document.getElementById('createInvoiceItemForm').addEventListener('submit', async function (event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        const invoiceId = document.getElementById('HiddenInvoiceId').value;
+        const description = document.getElementById('Description').value;
+        const quantity = document.getElementById('Quantity').value;
+        const unitPrice = document.getElementById('UnitPrice').value;
+        const totalPrice = (quantity * unitPrice).toFixed(2); // Calculate total price
+
+        // Send new invoice item data to the server
+        const response = await fetch('/Index?handler=AddInvoiceItem', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val() // For anti-forgery token
+            },
+            body: JSON.stringify({ invoiceId, description, quantity, unitPrice, totalPrice })
+        });
+
+        if (response.ok) {
+            // Success message
+            alert('Invoice item added successfully.');
+
+            // Hide the modal
+            $('#createInvoiceItemModal').modal('hide');
+
+            // Refresh the invoice items to include the newly added one
+            retrieveAllInvoiceItems(invoiceId);
+        } else {
+            // Error message
+            alert('Failed to add invoice item.');
+        }
+    });
+</script>
+
+<!-- Modal HTML -->
+<div class="modal fade" id="createInvoiceItemModal" tabindex="-1" aria-labelledby="createInvoiceItemLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createInvoiceItemLabel">Invoice Items</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="invoiceItemsContainer"></div> <!-- Container for invoice items table -->
+                <form id="createInvoiceItemForm">
+                    <input type="hidden" id="HiddenInvoiceId">
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="Description" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Quantity" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="Quantity" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="UnitPrice" class="form-label">Unit Price</label>
+                        <input type="number" class="form-control" id="UnitPrice" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="TotalPrice" class="form-label">Total Price</label>
+                        <input type="number" class="form-control" id="TotalPrice" disabled>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Invoice Item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Include jQuery and Bootstrap -->
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function fillModal(id, invoiceNumber, customerName, totalAmount, notes) {
+            document.getElementById('EditInvoiceId').value = id;
+            document.getElementById('EditInvoiceNumber').value = invoiceNumber;
+            document.getElementById('EditCustomerName').value = customerName;
+            document.getElementById('EditTotalAmount').value = totalAmount;
+            document.getElementById('EditNotes').value = notes;
+        }
+
+        function deleteInvoice(id) {
+            if (confirm('Are you sure you want to delete this invoice?')) {
+                fetch(`/Index?handler=Delete&id=${id}`, {
+                    method: 'POST',
+                    headers: {
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        alert('Failed to delete the invoice.');
+                    }
+                });
+            }
+        }
+
+        async function retrieveAllInvoiceItems(invoiceId) {
+            document.getElementById('HiddenInvoiceId').value = invoiceId;
+            const response = await fetch(`/Index?handler=InvoiceItems&invoiceId=${invoiceId}`);
+            const items = await response.json();
+            
+            let html = `<table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                            <th>Total Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>`;
+            items.forEach(item => {
+                html += `<tr>
+                                            <td>${item.description}</td>
+                                    <td>${item.quantity}</td>
+                                            <td>${item.unitPrice}</td>
+                                    <td>${item.totalPrice}</td>
+                                  </tr>`;
+            });
+            html += `</tbody></table>`;
+            document.getElementById('invoiceItemsContainer').innerHTML = html;
+
+            $('#createInvoiceItemModal').modal('show');
+        }
+
+        document.getElementById('createInvoiceItemForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const invoiceId = document.getElementById('HiddenInvoiceId').value;
+            const description = document.getElementById('Description').value;
+            const quantity = document.getElementById('Quantity').value;
+            const unitPrice = document.getElementById('UnitPrice').value;
+            const totalPrice = quantity * unitPrice;
+
+            const response = await fetch('/Index?handler=AddInvoiceItem', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
+                body: JSON.stringify({ invoiceId, description, quantity, unitPrice, totalPrice })
+            });
+
+            if (response.ok) {
+                alert('Invoice item added successfully.');
+                $('#createInvoiceItemModal').modal('hide');
+                retrieveAllInvoiceItems(invoiceId); // Refresh invoice items
+            } else {
+                alert('Failed to add invoice item.');
+            }
+        });
+
+        // Update total price on quantity or unit price change
+        document.getElementById('Quantity').addEventListener('input', calculateTotalPrice);
+        document.getElementById('UnitPrice').addEventListener('input', calculateTotalPrice);
+
+        function calculateTotalPrice() {
+            const quantity = document.getElementById('Quantity').value;
+            const unitPrice = document.getElementById('UnitPrice').value;
+            document.getElementById('TotalPrice').value = quantity * unitPrice;
+        }
+    </script>
+}
